@@ -26,12 +26,26 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin-top: 3.75rem;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-size: 1rem;
+}
+
 button {
   border-radius: var(--border-radius);
   border: none;
   height: var(--default-height);
   color: var(--secondary-color);
   background-color: transparent;
+  cursor: pointer;
 }
 
 ul {
@@ -58,6 +72,34 @@ label {
   margin-bottom: 0.75rem;
   padding: 0.75rem;
   outline: 1px solid #171717;
+}
+
+.footerNav {
+  position: fixed;
+  bottom: 0;
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  width: 100%;
+  max-width: 566px;
+  border-radius: 0.25rem;
+  background-color: var(--primary-color);
+  padding: 0.75rem;
+  outline: 1px solid #171717;
+  z-index: 1000;
+}
+
+.headerNav {
+  position: fixed;
+  top: 0;
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  width: 100%;
+  max-width: 566px;
+  border-radius: 0.25rem;
+  background-color: var(--primary-color);
+  padding: 0.75rem;
+  outline: 1px solid #171717;
+  z-index: 1000;
 }
 
 .buttonText {
@@ -90,6 +132,8 @@ label {
 
 .username {
   font-size: var(--default-font-size);
+  font-weight: lighter;
+  color: #636363;
 }
 
 .nickname {

@@ -1,0 +1,31 @@
+.container {
+    position: relative;
+}
+
+.cardHeader {
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    margin-bottom: 3.25rem;
+    position: relative;
+}
+
+.cardCover {
+    border-radius: 0.25rem 0.25rem 0rem 0rem;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    max-height: 12rem;
+}
+
+.cardAvatar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5.5rem;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    outline: 2px solid rgb(7, 7, 7);
+    cursor: auto;
+}

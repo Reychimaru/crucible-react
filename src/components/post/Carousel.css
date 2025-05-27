@@ -49,6 +49,10 @@ img {
     outline: 1px solid #171717;
 }
 
+.buttonLeft:hover, .buttonRight:hover {
+    background-color: #171717;
+}
+
 .buttonLeft {
     left: 0.75rem;
 }

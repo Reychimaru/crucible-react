@@ -3,6 +3,10 @@ import Carousel from "./Carousel";
 
 export default function Post() {
 
+    const tags = [
+        "manga", "anime", "berserk"
+    ]
+
     return (
         <div className="wrapper">
             <article className="container">
@@ -11,7 +15,7 @@ export default function Post() {
 
                     <div className="flexRowSB">
                         <div className="flexRow">
-                            <img className="avatar" src="/assets/images/image%20(2).jpg" alt="logo"/>
+                            <img className="avatar" src="/assets/images/image2.jpg" alt="logo"/>
                             <div className="flexColumnStart">
                                 <h2 className="nickname">nickname</h2>
                                 <h2 className="username">@username</h2>
@@ -23,7 +27,7 @@ export default function Post() {
                     </div>
 
                     <h2 className="postTitle">
-                        Ass
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque.
                     </h2>
 
                 </section>
@@ -67,9 +71,11 @@ export default function Post() {
                 </section>
 
                 <section className="postFooter flexColumnStart">
-                    <p>Description</p>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.</p>
                     <ul className="tagList flexRowStart">
-                        <li className="tag">#</li>
+                        {tags.map((tag, index) => (
+                            <li className="tag" key={index}>#{tag}</li>
+                        ))}
                     </ul>
                     <p>01 May 2025</p>
                 </section>

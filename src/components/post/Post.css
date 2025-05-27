@@ -1,0 +1,35 @@
+.postTitle, .postContent, .postButtons {
+    margin-top: 0.5rem;
+}
+
+.postTitle {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.postFooter, .buttonStats, .tagList {
+    gap: 0.25rem;
+}
+
+.buttonStats>div>p {
+    min-width: 1.25rem;
+    height: 2rem;
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+.tagList {
+    margin: 0.25rem 0;
+}
+
+.tag {
+    background-color: #171717;
+    padding: 0.25rem 0.5rem;
+    padding-left: 0.75rem;
+    border-radius: 1rem 0.25rem 0.25rem 1rem;
+    cursor: pointer;
+}
+
+.tag:hover {
+    background-color: #373737;
+}
