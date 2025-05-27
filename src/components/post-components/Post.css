@@ -1,0 +1,18 @@
+.postTitle, .postContent, .postButtons, .postFooter {
+    margin-top: 0.5rem;
+}
+
+.postTitle {
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.postFooter, .buttonStats {
+    gap: 0.25rem;
+}
+
+.buttonStats>div>p {
+    min-width: 1.25rem;
+    height: 2rem;
+    text-align: center;
+}

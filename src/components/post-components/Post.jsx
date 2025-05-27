@@ -1,51 +1,61 @@
 import './Post.css';
+import Carousel from "./Carousel";
 
 export default function Post() {
+
     return (
         <div className="wrapper">
             <article className="container">
 
-                <section className="postHeader flexRowSB">
-                    <div className="flexRow">
-                        <img className="avatar" src="/logo192.png" alt="logo"/>
-                        <div className="flexColumnStart">
-                            <h2 className="nickname">nickname</h2>
-                            <h2 className="username">@username</h2>
+                <section className="postHeader">
+
+                    <div className="flexRowSB">
+                        <div className="flexRow">
+                            <img className="avatar" src="/assets/images/image%20(2).jpg" alt="logo"/>
+                            <div className="flexColumnStart">
+                                <h2 className="nickname">nickname</h2>
+                                <h2 className="username">@username</h2>
+                            </div>
                         </div>
+                        <button className="buttonIcon">
+                            <i className="bi bi-three-dots-vertical"></i>
+                        </button>
                     </div>
-                    <button className="buttonIcon">
-                        <i className="bi bi-three-dots-vertical"></i>
-                    </button>
+
+                    <h2 className="postTitle">
+                        Ass
+                    </h2>
+
                 </section>
 
-                <section className="flexColumn">
-                    <img src="/logo192.png" alt="logo"/>
+                <section className="postContent flexColumn">
+                    <Carousel></Carousel>
                 </section>
 
-                <section className="flexRowSB">
-                    <div className="flexRow">
+                <section className="postButtons flexRowSB">
+                    <div className="buttonStats flexRow">
                         <div className="flexRowStart">
                             <button className="buttonIcon">
-                                <i className="bi bi-hand-thumbs-up"></i>
+                                <i className="bi bi-heart"></i>
                             </button>
-                            <p>1</p>
+                            <p className="flexColumn">99k</p>
                         </div>
 
                         <div className="flexRowStart">
                             <button className="buttonIcon">
                                 <i className="bi bi-chat-square-text"></i>
                             </button>
-                            <p>1</p>
+                            <p className="flexColumn">100k</p>
                         </div>
 
                         <div className="flexRowStart">
                             <button className="buttonIcon">
                                 <i className="bi bi-repeat"></i>
                             </button>
-                            <p>1</p>
+                            <p className="flexColumn">1m</p>
                         </div>
-
                     </div>
+
                     <div className="flexRow">
                         <button className="buttonIcon">
                             <i className="bi bi-send"></i>
@@ -56,7 +66,7 @@ export default function Post() {
                     </div>
                 </section>
 
-                <section>
+                <section className="postFooter flexColumnStart">
                     <p>Description</p>
                     <ul className="flexRowStart">
                         <li>tag</li>
