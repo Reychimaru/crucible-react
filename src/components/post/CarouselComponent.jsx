@@ -1,12 +1,8 @@
 import { useState } from 'react';
-import './Carousel.css';
+import './CarouselComponent.css';
 
-export default function Carousel() {
-    const images = [
-        "/assets/images/image1.jpg",
-        "/assets/images/image2.jpg",
-        "/assets/images/image3.jpg"
-    ];
+export default function CarouselComponent({ content }) {
+    const images = content
 
     const [carouselIndex, setCarouselIndex] = useState(0);
     const totalImages = images.length;
@@ -34,11 +30,13 @@ export default function Carousel() {
 
             <img src={currentImage} alt="carousel" className="mainImage" />
 
+            {content.length > 1 && (
+                <>
             <button className="buttonLeft" onClick={handlePrev}>
-                <i className="bi bi-arrow-left-circle"></i>
+                <i className="bi bi-chevron-left"></i>
             </button>
             <button className="buttonRight" onClick={handleNext}>
-                <i className="bi bi-arrow-right-circle"></i>
+                <i className="bi bi-chevron-right"></i>
             </button>
 
             <div className="imageIndex flexRowSB">
@@ -46,6 +44,8 @@ export default function Carousel() {
                 <p>/</p>
                 <p>{totalImages}</p>
             </div>
+                </>
+            )}
         </article>
     );
 }
