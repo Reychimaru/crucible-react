@@ -68,11 +68,8 @@ export default function Post() {
 
                 <section className="postFooter flexColumnStart">
                     <p>Description</p>
-                    <ul className="flexRowStart">
-                        <li>tag</li>
-                        <li>tag</li>
-                        <li>tag</li>
-                        <li>tag</li>
+                    <ul className="tagList flexRowStart">
+                        <li className="tag">#</li>
                     </ul>
                     <p>01 May 2025</p>
                 </section>
