@@ -1,0 +1,16 @@
+.commentHeader {
+    margin-top: 0.75rem;
+}
+
+.commentButtons {
+    margin-top: 0.5rem;
+}
+
+.commentFooter>.timestamp {
+    margin-top: 0.5rem;
+}
+
+.commentFooter {
+    border-bottom: 1px solid #171717;
+    padding-bottom: 0.75rem;
+}

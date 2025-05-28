@@ -5,6 +5,7 @@ import HeaderNav from "./components/navbar/HeaderNav";
 import Home from "./views/Home";
 import Profile from "./views/Profile";
 import Posting from "./views/Posting";
+import Login from "./views/Login";
 import './App.css';
 
 function App() {
@@ -15,8 +16,8 @@ function App() {
             <main>
                 <div className="wrapper">
                     <Routes>
-
                         <Route path="/" element={<Home/>}/>
+                        <Route path="/login" element={<Login/>}/>
                         <Route path="/user/:username" element={<Profile/>}/>
                         <Route path="/posting" element={<Posting/>}/>
                     </Routes>

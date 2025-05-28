@@ -1,5 +1,6 @@
 import './PostComponent.css';
 import CarouselComponent from "./CarouselComponent";
+import CommentComponent from "./CommentComponent";
 
 export default function PostComponent({ post }) {
 
@@ -66,14 +67,39 @@ export default function PostComponent({ post }) {
                 </section>
 
                 <section className="postFooter flexColumnStart">
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.</p>
+                    <p>{ post.description }</p>
                     <ul className="tagList flexRowStart">
                         {post.tags.map((tag, index) => (
                             <li className="tag" key={index}>#{tag.name}</li>
                         ))}
                     </ul>
-                    <p>{ post.createdAt }</p>
+                    <p className="timestamp">Posted at { post.createdAt }</p>
                 </section>
+
+                <section className="commentCreator">
+                    <form className="flexColumnStart" onSubmit={(e) => e.preventDefault()}>
+                        <label htmlFor="comment">Comment</label>
+                        <textarea name="comment" placeholder="Write a comment"></textarea>
+                        <div className="flexRowEnd doubleButtons">
+                            <div className="buttonTextNone">Cancel</div>
+                            <div className="buttonTextNone">Cancel</div>
+                            <button className="buttonText">Cancel</button>
+                            <button className="buttonText">Comment</button>
+                        </div>
+                    </form>
+                </section>
+
+                <section className="postComments">
+                        <h3>Comments</h3>
+                    <ul>
+                        {post.comments.map((comment, index) => (
+                            <li key={index}>
+                                <CommentComponent comment={comment} />
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+
 
             </article>
     )

@@ -2,7 +2,6 @@ import './ProfileCard.css'
 
 export default function ProfileCard() {
     return (
-        <div className="wrapper">
             <article className="container">
                 <section className="cardHeader">
                     <img className="cardCover" src="/assets/images/image2.jpg" alt="ProfileCard"/>
@@ -10,32 +9,31 @@ export default function ProfileCard() {
                 </section>
 
                 <section className="cardFooter flexColumnStart">
-                    <h2>
+                    <h2 className="nickname">
                         nickname
                     </h2>
-                    <h2>
+                    <h2 className="username">
                         username
                     </h2>
                     <p>
                         bio
                     </p>
-                    <a>
+                    <a href="http://www.google.com" target="_blank" rel="noopener noreferrer">
                         link
                     </a>
-                </section>
 
-                <section className="cardButtons">
-                    <button className="buttonText flexRowSB">
-                        Posts
-                    </button>
-                    <button className="buttonText">
-                        Posts
-                    </button>
-                    <button className="buttonText">
-                        Posts
-                    </button>
+                    <div className="flexRow cardButtons">
+                        <button className="buttonText">
+                            Posts
+                        </button>
+                        <button className="buttonText">
+                            Highlights
+                        </button>
+                        <button className="buttonText">
+                            Contents
+                        </button>
+                    </div>
                 </section>
             </article>
-        </div>
     )
 }

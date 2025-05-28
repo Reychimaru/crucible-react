@@ -1,8 +1,15 @@
-import {useLocation, useNavigate} from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function HeaderNav() {
     const location = useLocation();
     const navigate = useNavigate();
+
+    // 🔒 Nasconde la navbar nella pagina di login
+    const hiddenPaths = ['/login', '/register', '/recover'];
+    if (hiddenPaths.includes(location.pathname)) {
+        return null;
+    }
+
 
     const handleNavClick = (onPage) => {
         if (onPage === 'home') {
@@ -12,10 +19,9 @@ export default function HeaderNav() {
         } else if (onPage === 'posting') {
             navigate('/posting');
         } else if (onPage === 'settings') {
-            navigate('/settings'); // <-- Aggiorna questo path se necessario
+            navigate('/settings');
         }
     };
-
 
     return (
         <nav className="headerNav flexRowSB">
@@ -33,7 +39,6 @@ export default function HeaderNav() {
 
             <h1>Crucible</h1>
 
-
             {location.pathname === '/' && (
                 <button className="buttonIcon" onClick={() => handleNavClick('posting')}>
                     <i className="bi bi-pencil-square"></i>
@@ -45,7 +50,6 @@ export default function HeaderNav() {
                     <i className="bi bi-gear"></i>
                 </button>
             )}
-
         </nav>
     );
 }

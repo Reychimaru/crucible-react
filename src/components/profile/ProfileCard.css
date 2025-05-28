@@ -19,8 +19,8 @@
 
 .cardAvatar {
     position: absolute;
-    bottom: 0;
-    left: 0;
+    bottom: -2.5rem;
+    left: 0.75rem;
     width: 5.5rem;
     aspect-ratio: 1 / 1;
     border-radius: 50%;
@@ -28,4 +28,9 @@
     cursor: pointer;
     outline: 2px solid rgb(7, 7, 7);
     cursor: auto;
+}
+
+.cardButtons {
+    width: 100%;
+    gap: 0.75rem;
 }
