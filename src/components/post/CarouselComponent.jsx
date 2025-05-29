@@ -1,3 +1,4 @@
+import {Link} from 'react-router-dom'
 import { useState } from 'react';
 import './CarouselComponent.css';
 
@@ -27,8 +28,9 @@ export default function CarouselComponent({ content }) {
                 className="backgroundBlur"
                 style={{ backgroundImage: `url(${currentImage})` }}
             ></div>
-
+            <Link to={`/post/${content.postId}`} className="flexRow">
             <img src={currentImage} alt="carousel" className="mainImage" />
+            </Link>
 
             {content.length > 1 && (
                 <>

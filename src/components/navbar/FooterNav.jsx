@@ -43,7 +43,7 @@ export default function FooterNav() {
                 <i className="bi bi-house"></i>
             </button>
             <button className="buttonIcon" onClick={() => handleNavClick('explore')}>
-                <i className="bi bi-search"></i>
+                <i className="bi bi-compass"></i>
             </button>
             <button className="buttonIcon" onClick={() => handleNavClick('communities')}>
                 <i className="bi bi-people"></i>

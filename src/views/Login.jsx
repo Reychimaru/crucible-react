@@ -1,27 +1,67 @@
+import {useState} from 'react';
+import './Login.css';
+
 export default function Login() {
+    const [showPassword, setShowPassword] = useState(false);
+
+    const isEmailWrong = false
+    const isPasswordWrong = false
+
+    const togglePasswordVisibility = (e) => {
+        e.preventDefault();
+        setShowPassword((prev) => !prev);
+    };
+
     return (
         <div className="centerWrapper">
-            <article className="container">
+            <article className="microContainer">
+                <h1 className="containerTitle">Crucible</h1>
                 <h3>Login</h3>
                 <form className="flexColumn">
-                    <label htmlFor="email">Email</label>
-                    <input name="email" type="email" placeholder="Enter your email"/>
-                    <label htmlFor="password">Password</label>
-                    <input name="password" type="password" placeholder="Enter your password"/>
-                    <div className="flexRow formButtons">
-                        <button className="buttonText">Recover Password</button>
-                        <button className="buttonText">Login</button>
+                    <label htmlFor="email" className="flexRowSB">
+                        <span>Email</span>
+                        {isEmailWrong ? <span className="labelError">Email not found</span> : <span className="labelPlaceholder"></span>}
+                    </label>
+                    <input name="email" type="email"
+                           className={isEmailWrong ? "inputError" : ""}
+                           placeholder="Enter your email"/>
+
+                    <label htmlFor="password" className="flexRowSB">
+                        <span>Password</span>
+                        {isPasswordWrong ? <span className="labelError">Password is wrong</span> : <span className="labelPlaceholder"></span>}
+                    </label>
+                    <div className="flexRow passwordContainer">
+                        <input
+                            name="password"
+                            className={isPasswordWrong ? "inputError" : ""}
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Enter your password"
+                        />
+                        <button
+                            type="button"
+                            className="buttonTextIcon"
+                            onClick={togglePasswordVisibility}
+                            aria-label="Toggle password visibility"
+                        >
+                            <i className={`bi ${showPassword ? "bi-eye-slash" : "bi-eye"}`}></i>
+                        </button>
+                    </div>
+
+                    <div className="flexRow buttonContainer">
+                        <button type="button" className="buttonText">Recover Password</button>
+                        <button type="submit" className="buttonText">Login</button>
                     </div>
                 </form>
             </article>
 
-            <article className="container">
+            <div className="spacer"></div>
+
+            <article className="microContainer">
                 <h3>New user?</h3>
-                <div className="flexRow formButtons">
-                    <button className="buttonText">Create Account</button>
+                <div className="flexRow buttonContainer">
+                    <button type="button" className="buttonText">Create Account</button>
                 </div>
             </article>
         </div>
-
-    )
+    );
 }
