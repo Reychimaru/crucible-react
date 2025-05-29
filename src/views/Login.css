@@ -1,8 +1,0 @@
-.passwordContainer {
-    width: 100%;
-}
-
-.passwordContainer>input {
-    width: 100%;
-    border-radius: 0.25rem 0 0 0.25rem ;
-}

@@ -23,7 +23,7 @@ export default function CarouselComponent({ content }) {
     const currentImage = images[carouselIndex];
 
     return (
-        <article className="flexColumn">
+        <article className="flexColumn carouselContainer">
             <div
                 className="backgroundBlur"
                 style={{ backgroundImage: `url(${currentImage})` }}

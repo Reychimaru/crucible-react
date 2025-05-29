@@ -1,0 +1,59 @@
+/*.interestContainer {
+    padding: 0 0.75rem 0.75rem 0.75rem;
+}*/
+
+.interestGrid {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0.75rem;
+    gap: 3px;
+}
+
+.interestList {
+    position: relative;
+    width: calc(33.3333% - 3px);
+    aspect-ratio: 1 / 1;
+}
+
+.interestThumbnail {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    filter: brightness(0.5);
+    transition: filter 0.3s ease-in-out;
+}
+
+.interestThumbnail:hover, .interestThumbnail.selected {
+    filter: brightness(1);
+    transition: filter 0.3s ease-in-out;
+    outline: 1px solid white;
+    border-radius: 0.25rem;
+}
+
+.interestTag {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    font-size: 0.7rem;
+    background-color: #171717;
+    padding: 0.25rem 0.5rem 0.25rem 0.75rem;
+    border-radius: 1rem 0.25rem 0.25rem 1rem;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.interestCheck {
+    position: absolute;
+    font-size: 3rem;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.interestTag:hover {
+    background-color: #373737;
+}

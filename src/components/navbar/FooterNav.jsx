@@ -7,7 +7,7 @@ export default function FooterNav() {
     const clickSound = useRef(new Audio('/assets/sounds/navigation.mp3'));
 
     // Nascondi il footer nella pagina di login
-    const hiddenPaths = ['/login', '/register', '/recover'];
+    const hiddenPaths = ['/login', '/register', '/recover', '/setup'];
     if (hiddenPaths.includes(location.pathname)) {
         return null;
     }

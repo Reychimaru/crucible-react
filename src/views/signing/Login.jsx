@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import './Login.css';
+import {Link} from "react-router-dom";
 
 export default function Login() {
     const [showPassword, setShowPassword] = useState(false);
@@ -30,16 +30,16 @@ export default function Login() {
                         <span>Password</span>
                         {isPasswordWrong ? <span className="labelError">Password is wrong</span> : <span className="labelPlaceholder"></span>}
                     </label>
-                    <div className="flexRow passwordContainer">
+                    <div className="flexRow fullWidth">
                         <input
                             name="password"
-                            className={isPasswordWrong ? "inputError" : ""}
+                            className={`inputWithButton ${isPasswordWrong ? "inputError" : ""}`}
                             type={showPassword ? "text" : "password"}
                             placeholder="Enter your password"
                         />
                         <button
                             type="button"
-                            className="buttonTextIcon"
+                            className="buttonWithInput"
                             onClick={togglePasswordVisibility}
                             aria-label="Toggle password visibility"
                         >
@@ -48,7 +48,9 @@ export default function Login() {
                     </div>
 
                     <div className="flexRow buttonContainer">
-                        <button type="button" className="buttonText">Recover Password</button>
+                        <Link to={`/recover`} className="flexRow fullWidth">
+                            <button type="button" className="buttonText">Recover</button>
+                        </Link>
                         <button type="submit" className="buttonText">Login</button>
                     </div>
                 </form>
@@ -58,9 +60,9 @@ export default function Login() {
 
             <article className="microContainer">
                 <h3>New user?</h3>
-                <div className="flexRow buttonContainer">
+                <Link to={`/register`} className="flexRow fullWidth">
                     <button type="button" className="buttonText">Create Account</button>
-                </div>
+                </Link>
             </article>
         </div>
     );

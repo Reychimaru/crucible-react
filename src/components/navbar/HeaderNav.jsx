@@ -4,7 +4,7 @@ export default function HeaderNav() {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const hiddenPaths = ['/login', '/register', '/recover'];
+    const hiddenPaths = ['/login', '/register', '/recover', '/setup'];
     const returnPaths = ['/', '/explore', '/communities', 'notifications', 'chats'];
 
     if (hiddenPaths.includes(location.pathname)) {

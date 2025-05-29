@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import './Login.css';
+import {Link} from 'react-router-dom';
 
 export default function Register() {
     const [showPassword, setShowPassword] = useState(false);
@@ -52,7 +52,7 @@ export default function Register() {
                         {isEmailUsed ? (
                             <span className="labelError">Email already registered</span>
                         ) : isEmailInvalid ? (
-                            <span className="labelError">Email not valid</span>
+                            <span className="labelError">Invalid email</span>
                         ) : (
                             <span className="labelPlaceholder"></span>
                         )}
@@ -69,21 +69,21 @@ export default function Register() {
                         {isPasswordShort ? (
                             <span className="labelError">Minimum 8 characters</span>
                         ) : isPasswordInvalid ? (
-                            <span className="labelError">Password invalid</span>
+                            <span className="labelError">Invalid password</span>
                         ) : (
                             <span className="labelPlaceholder"></span>
                         )}
                     </label>
-                    <div className="flexRow passwordContainer">
+                    <div className="flexRow fullWidth">
                         <input
                             name="password"
-                            className={ (isPasswordShort || isPasswordInvalid) ? "inputError" : "" }
+                            className={`inputWithButton ${(isPasswordShort || isPasswordInvalid) ? "inputError" : ""}`}
                             type={showPassword ? "text" : "password"}
                             placeholder="Enter your password"
                         />
                         <button
                             type="button"
-                            className="buttonTextIcon"
+                            className="buttonWithInput"
                             onClick={togglePasswordVisibility}
                             aria-label="Toggle password visibility"
                         >
@@ -99,16 +99,16 @@ export default function Register() {
                             <span className="labelError">Password not matching</span>
                         )}
                     </label>
-                    <div className="flexRow passwordContainer">
+                    <div className="flexRow fullWidth">
                         <input
                             name="confirmPassword"
-                            className={isPasswordMatching ? "" : "inputError"}
+                            className={`inputWithButton ${!isPasswordMatching ? "inputError" : ""}`}
                             type={showPassword ? "text" : "password"}
                             placeholder="Enter your password"
                         />
                         <button
                             type="button"
-                            className="buttonTextIcon"
+                            className="buttonWithInput"
                             onClick={togglePasswordVisibility}
                             aria-label="Toggle password visibility"
                         >
@@ -127,7 +127,9 @@ export default function Register() {
             <article className="microContainer">
                 <h3>Already registered?</h3>
                 <div className="flexRow buttonContainer">
+                    <Link to={`/login`} className="flexRow fullWidth">
                     <button type="button" className="buttonText">Login</button>
+                    </Link>
                 </div>
             </article>
         </div>

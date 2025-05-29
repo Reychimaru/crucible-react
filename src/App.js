@@ -13,12 +13,14 @@ import Post from "./views/Post";
 import Profile from "./views/Profile";
 import Personalize from "./views/Personalize";
 
-import Login from "./views/Login";
-import Register from "./views/Register";
+import Login from "./views/signing/Login";
+import Recover from "./views/signing/Recover";
+import Register from "./views/signing/Register";
+import {Setup} from "./views/signing/Setup";
 
 function AppContent() {
     const location = useLocation();
-    const wrapperPaths = ['/login', '/register', '/recover'];
+    const wrapperPaths = ['/login', '/recover', '/register'];
 
     const isSpecialWrapper = wrapperPaths.includes(location.pathname);
 
@@ -32,8 +34,11 @@ function AppContent() {
                     <Route path="/post/:idpost" element={<Post />} />
                     <Route path="/user/:username" element={<Profile />} />
                     <Route path="/personalize" element={<Personalize />} />
+
                     <Route path="/login" element={<Login />} />
+                    <Route path="/recover" element={<Recover />} />
                     <Route path="/register" element={<Register />} />
+                    <Route path="/setup" element={<Setup />} />
                 </Routes>
             </div>
             <FooterNav />
