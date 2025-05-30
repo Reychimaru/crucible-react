@@ -1,9 +1,9 @@
 import './ProfileCard.css'
 import {Link} from "react-router-dom";
 
-export default function ProfileCard() {
+export default function Community() {
 
-    const profileOwner = true
+    const isMember = true
 
     return (
         <article className="cardContainer">
@@ -11,20 +11,20 @@ export default function ProfileCard() {
                 <div className="cardCover">
                     <img src="/assets/images/image2.jpg" alt="ProfileCard"/>
                 </div>
-    <div className="cardAvatar">
-        <img src="/assets/images/image2.jpg" alt="ProfileCard"/>
-    </div>
+                <div className="cardAvatar">
+                    <img src="/assets/images/image2.jpg" alt="ProfileCard"/>
+                </div>
 
                 <div className="flexRow cardHeaderButtons">
                     <div className="buttonTextNone"></div>
                     <div className="buttonTextNone"></div>
-                    {profileOwner ? (
-                        <Link to="/personalize" className="buttonText">
-                            Personalize
-                        </Link>
+                    {isMember ? (
+                        <button className="buttonText">
+                            Member
+                        </button>
                     ) : (
                         <button className="buttonText">
-                            Follow
+                            Join
                         </button>
                     )}
                 </div>
@@ -55,6 +55,9 @@ export default function ProfileCard() {
                         Contents
                     </button>
                 </div>
+
+                <label htmlFor="search">Search posts in CommunityName</label>
+                <input name="search" type="search"/>
             </section>
         </article>
     )

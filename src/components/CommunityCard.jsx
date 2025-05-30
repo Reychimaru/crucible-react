@@ -1,9 +1,8 @@
-import './ProfileCard.css'
 import {Link} from "react-router-dom";
 
-export default function Profile() {
+export default function CommunityCard() {
 
-    const profileOwner = true
+    const isAdmin = true
 
     return (
         <article className="cardContainer">
@@ -18,7 +17,7 @@ export default function Profile() {
                 <div className="flexRow cardHeaderButtons">
                     <div className="buttonTextNone"></div>
                     <div className="buttonTextNone"></div>
-                    {profileOwner ? (
+                    {isAdmin ? (
                         <Link to="/personalize" className="buttonText">
                             Personalize
                         </Link>

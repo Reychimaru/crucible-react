@@ -15,7 +15,7 @@ export default function PostComponent({post}) {
 
             <section className="postHeader">
                 <div className="flexRowSB">
-                    <Link to={`/user/${post.username}`} className="flexRow">
+                    <Link to={`/u/${post.username}`} className="flexRow">
                         <img className="avatar" src={post.avatar} alt="avatar"/>
                         <div className="flexColumnStart">
                             <h2 className="nickname">{post.nickname}</h2>
@@ -26,7 +26,7 @@ export default function PostComponent({post}) {
                         <i className="bi bi-three-dots-vertical"></i>
                     </button>
                 </div>
-                <Link to={`/post/${post.postId}`}>
+                <Link to={`/p/${post.postId}`}>
                     <h2 className="postTitle">{post.title}</h2>
                 </Link>
             </section>
@@ -67,7 +67,7 @@ export default function PostComponent({post}) {
             </section>
 
             <section className="postFooter flexColumnStart">
-                <Link to={`/user/${post.postId}`} className="flexRow">
+                <Link to={`/u/${post.postId}`} className="flexRow">
                 <p className="description">{post.description}</p>
                 </Link>
                 <ul className="tagList flexRowStart">
@@ -80,7 +80,7 @@ export default function PostComponent({post}) {
                 <p className="timestamp">Posted at {post.createdAt}</p>
             </section>
 
-            {location.pathname.startsWith('/post/') && (
+            {location.pathname.startsWith('/p/') && (
                 <>
                     <section className="commentCreator">
                         <form className="flexColumnStart" onSubmit={(e) => e.preventDefault()}>

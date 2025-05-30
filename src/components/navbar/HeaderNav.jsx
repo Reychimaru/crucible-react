@@ -13,7 +13,7 @@ export default function HeaderNav() {
 
     const handleNavClick = (onPage) => {
         if (onPage === 'home') {
-            navigate('/user/username');
+            navigate('/u/username');
         } else if (onPage === 'return') {
             navigate(-1);
         } else if (onPage === 'posting') {
@@ -43,6 +43,11 @@ export default function HeaderNav() {
                 </button>
             )}
 
+            {location.pathname === '/communities' && (
+                <button className="buttonIcon" onClick={() => handleNavClick('settings')}>
+                    <i className="bi bi-plus-circle"></i>
+                </button>
+            )}
 
 
             {location.pathname === '/' && (
@@ -54,6 +59,15 @@ export default function HeaderNav() {
             {location.pathname === '/communities' && (
                 <h1>Communities</h1>
             )}
+            {location.pathname === '/notifications' && (
+                <h1>work in progress</h1>
+            )}
+            {location.pathname === '/chats' && (
+                <h1>work in progress</h1>
+            )}
+
+
+
             {location.pathname === '/personalize' && (
                 <h1>Personalize</h1>
             )}
@@ -66,6 +80,12 @@ export default function HeaderNav() {
             )}
 
             {location.pathname === '/explore' && (
+                <button className="buttonIcon" onClick={() => handleNavClick('home')}>
+                    <i className="bi bi-search"></i>
+                </button>
+            )}
+
+            {location.pathname === '/communities' && (
                 <button className="buttonIcon" onClick={() => handleNavClick('home')}>
                     <i className="bi bi-search"></i>
                 </button>

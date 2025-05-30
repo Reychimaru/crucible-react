@@ -2,7 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
 }
 
 :root {
@@ -174,12 +175,12 @@ textarea::placeholder, input::placeholder {
 .container {
   color: var(--secondary-color);
   font-size: 0.8rem;
-  width: 100%;
   border-radius: 0.25rem;
   background-color: var(--primary-color);
   margin-bottom: 0.75rem;
   padding: 0.75rem;
   outline: 1px solid #171717;
+  width: 100%;
 }
 
 .microContainer {
@@ -304,7 +305,7 @@ textarea::placeholder, input::placeholder {
 
 .username {
   font-size: var(--default-font-size);
-  font-weight: lighter;
+  font-weight: 600;
   color: #636363;
 }
 
@@ -312,6 +313,55 @@ textarea::placeholder, input::placeholder {
   font-size: var(--default-font-size);
 }
 
+.tosContainer {
+  position: absolute;
+  max-height: 566px;
+  max-width: 566px;
+  z-index: 1010;
+  padding: 0.75rem;
+  color: var(--secondary-color);
+  font-size: 0.8rem;
+  border-radius: 0.25rem;
+  background-color: var(--primary-color);
+  margin: 0.75rem;
+  outline: 1px solid #171717;
+}
+
+.tosHeader {
+  position: relative;
+}
+
+.tosHeader>button {
+  position: absolute;
+  right: -0.35rem;
+  top: -0.35rem;
+}
+
+.tosFooter {
+  max-height: 500px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  word-break: break-word;
+  hyphens: auto;
+  padding-right: 0.5rem; /* spazio per scrollbar */
+}
+
+.tosFooter section {
+  margin-top: 0.75rem;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* sfondo scuro trasparente */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1005; /* assicura che stia sopra tutto */
+}
 
 /*Display Flex*/
 .flexRow {

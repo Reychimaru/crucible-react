@@ -28,7 +28,7 @@ export default function CarouselComponent({ content }) {
                 className="backgroundBlur"
                 style={{ backgroundImage: `url(${currentImage})` }}
             ></div>
-            <Link to={`/post/${content.postId}`} className="flexRow">
+            <Link to={`/p/${content.postId}`} className="flexRow">
             <img src={currentImage} alt="carousel" className="mainImage" />
             </Link>
 

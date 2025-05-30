@@ -17,6 +17,8 @@ import Login from "./views/signing/Login";
 import Recover from "./views/signing/Recover";
 import Register from "./views/signing/Register";
 import {Setup} from "./views/signing/Setup";
+import Community from "./views/Community";
+import Communities from "./views/communities/Communities";
 
 function AppContent() {
     const location = useLocation();
@@ -31,14 +33,18 @@ function AppContent() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/posting" element={<Posting />} />
-                    <Route path="/post/:idpost" element={<Post />} />
-                    <Route path="/user/:username" element={<Profile />} />
+                    <Route path="/p/:idpost" element={<Post />} />
+                    <Route path="/u/:username" element={<Profile />} />
                     <Route path="/personalize" element={<Personalize />} />
 
                     <Route path="/login" element={<Login />} />
                     <Route path="/recover" element={<Recover />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/setup" element={<Setup />} />
+
+                    <Route path="/c/:id" element={<Community />} />
+                    <Route path="/communities" element={<Communities />} />
+
                 </Routes>
             </div>
             <FooterNav />
@@ -55,3 +61,9 @@ function App() {
 }
 
 export default App;
+
+
+// u user
+// p post
+// c community
+
